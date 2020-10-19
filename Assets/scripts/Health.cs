@@ -1,34 +1,32 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    public float health;
-    public float starthealth;
-    public bool alive = true;
+    [SerializeField] private float _startHealth = 3;
 
+    private float _currentHealth;
 
-    public void Start()
+    private void Start()
     {
-        alive = true;
-    }
-    public void TakeDamage(float value)
-    {
-
-        if (!alive)
-        {
-            return;
-        }
-
-        if (health <= 0)
-        {
-            health = 0;
-            alive = false;
-        }
-
-        health -= value;
-
-
+        _currentHealth = _startHealth;
     }
 
+    // Called from UnityEvent
+    public void TakeDamage(float dmg = 3f)
+    {
+        _currentHealth -= dmg;
+        print("Ik krijg schade...");
 
+        if (_currentHealth <= 0)
+        {
+            print("Ik ben dood");
+            Destroy(gameObject);
+        }
+
+    }
 }
