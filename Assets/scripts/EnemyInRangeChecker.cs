@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyInRangeChecker : MonoBehaviour
 {
-    [SerializeField] private float _radius;
+    [SerializeField] private float _radius = 10f;
     [SerializeField] private LayerMask _layer;
     public Enemy GetFirstEnemyInRange()
     {

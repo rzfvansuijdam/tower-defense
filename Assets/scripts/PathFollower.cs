@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class PathFollower : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed = 2f;
     [SerializeField] private float _arrivalthreshold = 0.1f;
 
     [SerializeField] private UnityEvent _OnPathComplete;
@@ -31,7 +31,7 @@ public class PathFollower : MonoBehaviour
         {
             if (_currentWaypoint == _path.GetPathEnd())
             {
-                print("Ik ben bij het eindpunt");
+               Debug.Log("Ik ben bij het eindpunt");
                 _OnPathComplete?.Invoke();
             }
             else

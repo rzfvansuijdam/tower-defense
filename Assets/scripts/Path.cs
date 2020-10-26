@@ -11,6 +11,7 @@ public class Path : MonoBehaviour
     private void Awake()
     {
         _waypoints = FindObjectsOfType<Waypoint>().OrderBy(wp => wp.gameObject.name).ToArray();
+        
     }
 
     public Waypoint GetPathStart()

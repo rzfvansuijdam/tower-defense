@@ -17,7 +17,7 @@ public class MultiTargetTower : Tower
     {
         foreach (var enemy in _enemies)
         {
-            print("Multitarget tower val deze vijand aan: " + enemy.name);
+            print("Multitarget is attacking a bitch: " + enemy.name + " haha got em");
         }
     }
 }
